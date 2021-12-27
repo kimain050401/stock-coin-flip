@@ -42,33 +42,41 @@
         <div>
             <a id="coin10">(보너스) -</a>
         </div>
-        <h2 id="front">동전 앞면 : n개</h2>
-        <h2 id="back">동전 뒷면 : n개</h2>
+        <h3 id="front">동전 앞면 : n개</h3>
+        <h3 id="back">동전 뒷면 : n개</h3>
+        <h2 id="value">결과 : 동전 앞면 승</h2>
     </div>
     <script>
-        let front = 0
-        let back = 0
-        for(let i = 0; i < 10; i++){
-            if(Math.floor(Math.random() * (2)) == 0){
-                document.getElementById('coin' + String(i)).innerText = "앞면"
-                front = front + 1
+        function roll(){
+            let front = 0
+            let back = 0
+            for(let i = 0; i < 10; i++){
+                if(Math.floor(Math.random() * (2)) == 0){
+                    document.getElementById('coin' + String(i)).innerText = "앞면"
+                    front = front + 1
 
+                } else{
+                    document.getElementById('coin' + String(i)).innerText = "뒷면"
+                    back = back + 1
+                }
+            }
+            if(front == 5){
+                if(Math.floor(Math.random() * (2)) == 0){
+                    document.getElementById('coin10').innerText = "(보너스) 앞면"
+                    front = front + 1
+                } else{
+                    document.getElementById('coin10').innerText = "(보너스) 뒷면"
+                    back = back + 1
+                }
+            }
+            document.getElementById('front').innerText = "동전 앞면 : " + String(front) + "개"
+            document.getElementById('back').innerText = "동전 뒷면 : " + String(back) + "개"
+            if(back < front){
+                document.getElementById('value').innerText = "결과 : 동전 앞면 승"
             } else{
-                document.getElementById('coin' + String(i)).innerText = "뒷면"
-                back = back + 1
+                document.getElementById('value').innerText = "결과 : 동전 뒷면 승"
             }
         }
-        if(front == 5){
-            if(Math.floor(Math.random() * (2)) == 0){
-                document.getElementById('coin10').innerText = "(보너스) 앞면"
-                front = front + 1
-            } else{
-                document.getElementById('coin10').innerText = "(보너스) 뒷면"
-                back = back + 1
-            }
-        }
-        document.getElementById('front').innerText = "동전 앞면 : " + String(front) + "개"
-        document.getElementById('back').innerText = "동전 뒷면 : " + String(back) + "개"
     </script>
 </body>
 </html>
