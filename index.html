@@ -42,7 +42,11 @@
     </div>
     <script>
         for(let i = 0; i < 10; i++){
-            console.log(Math.floor(Math.random() * (2)))
+            if(Math.floor(Math.random() * (2)) == 0){
+                document.getElementById('coin' + String(i)).innerText = "앞면"
+            } else{
+                document.getElementById('coin' + String(i)).innerText = "뒷면"
+            }
         }
     </script>
 </body>
