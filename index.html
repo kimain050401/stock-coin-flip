@@ -39,13 +39,28 @@
             <a id="coin8">-</a>
             <a id="coin9">-</a>
         </div>
+        <div>
+            <a id="coin10">(보너스) -</a>
+        </div>
     </div>
     <script>
+        let front = 0
+        let back = 0
         for(let i = 0; i < 10; i++){
             if(Math.floor(Math.random() * (2)) == 0){
                 document.getElementById('coin' + String(i)).innerText = "앞면"
+                front = front + 1
+
             } else{
                 document.getElementById('coin' + String(i)).innerText = "뒷면"
+            }
+        }
+        if(front == 5){
+            if(Math.floor(Math.random() * (2)) == 0){
+                document.getElementById('coin10').innerText = "(보너스) 앞면"
+                front = front + 1
+            } else{
+                document.getElementById('coin10').innerText = "(보너스) 뒷면"
             }
         }
     </script>
