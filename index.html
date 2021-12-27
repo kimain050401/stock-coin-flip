@@ -55,6 +55,7 @@
 
             } else{
                 document.getElementById('coin' + String(i)).innerText = "뒷면"
+                back = back + 1
             }
         }
         if(front == 5){
@@ -63,8 +64,11 @@
                 front = front + 1
             } else{
                 document.getElementById('coin10').innerText = "(보너스) 뒷면"
+                back = back + 1
             }
         }
+        document.getElementById('front').innerText = "동전 앞면 : " + String(front) + "개"
+        document.getElementById('back').innerText = "동전 뒷면 : " + String(back) + "개"
     </script>
 </body>
 </html>
