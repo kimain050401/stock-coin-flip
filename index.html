@@ -15,7 +15,7 @@
         h1{
             color: white;
             font-family: 'East Sea Dokdo', cursive;
-            font-size: 80px;
+            font-size: 70px;
         }
         h2{
             color: white;
@@ -67,6 +67,7 @@
         function roll(){
             let front = 0
             let back = 0
+            document.getElementById('coin10').innerText = "(보너스) --"
             for(let i = 0; i < 10; i++){
                 if(Math.floor(Math.random() * (2)) == 0){
                     document.getElementById('coin' + String(i)).innerText = "앞면"
