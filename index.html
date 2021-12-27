@@ -15,22 +15,27 @@
         h1{
             color: white;
             font-family: 'East Sea Dokdo', cursive;
-            font-size: 8rem;
+            font-size: 80px;
         }
         h2{
             color: white;
             font-family: 'East Sea Dokdo', cursive;
-            font-size: 6rem;
+            font-size: 60px;
         }
         h3{
             color: white;
             font-family: 'East Sea Dokdo', cursive;
-            font-size: 3rem;
+            font-size: 40px;
+        }
+        h4{
+            color: white;
+            font-family: 'East Sea Dokdo', cursive;
+            font-size: 34px;
         }
         a{
             color: white;
             font-family: 'East Sea Dokdo', cursive;
-            font-size: 3rem;
+            font-size: 40px;
         }
     </style>
 </head>
@@ -54,10 +59,10 @@
         <div>
             <a id="coin10">(보너스) --</a>
         </div>
-        <a id="front">동전 앞면 : -개</a><br>
-        <a id="back">동전 뒷면 : -개</a><br>
+        <h4 id="front">앞면 : -개 / 뒷면 : -개</h4>
         <h2 id="value">결과 : 동전 --</h2>
-        <a onclick="roll()" id="roll_button" style="cursor: pointer; text-decoration: underline;">동전 뒤집기</a>
+        <h3 onclick="roll()" id="roll_button" style="cursor: pointer; text-decoration: underline;">동전 뒤집기</h3>
+       
     </div>
     <script>
         function roll(){
@@ -82,8 +87,7 @@
                     back = back + 1
                 }
             }
-            document.getElementById('front').innerText = "동전 앞면 : " + String(front) + "개"
-            document.getElementById('back').innerText = "동전 뒷면 : " + String(back) + "개"
+            document.getElementById('front').innerText = "앞면 : " + String(front) + "개 / 뒷면 : " + String(back) + "개"
             if(back < front){
                 document.getElementById('value').innerText = "결과 : 동전 앞면"
             } else{
