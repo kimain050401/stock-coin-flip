@@ -45,7 +45,7 @@
         <h3 id="front">동전 앞면 : -개</h3>
         <h3 id="back">동전 뒷면 : -개</h3>
         <h2 id="value">결과 : -- -- -</h2>
-        <button onclick="roll()">동전 뒤집기</button>
+        <button onclick="roll()" id="roll_button">동전 뒤집기</button>
     </div>
     <script>
         function roll(){
@@ -77,6 +77,7 @@
             } else{
                 document.getElementById('value').innerText = "결과 : 동전 뒷면 승"
             }
+            document.getElementById('roll_button').innerText = "다시 동전 뒤집기"
         }
     </script>
 </body>
